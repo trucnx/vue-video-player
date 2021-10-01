@@ -17,6 +17,7 @@
                          ref="videoPlayer"
                          :options="playerOptions"
                          :playsinline="true"
+                         :headers="headers"
                          @play="onPlayerPlay($event)"
                          @pause="onPlayerPause($event)"
                          @ended="onPlayerEnded($event)"
@@ -43,6 +44,12 @@
     data() {
       return {
         // videojs options
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json;charset=UTF-8',
+          'Accept-Language': 'zh-CN,zh;q=0.9,hy;q=0.8,mn;q=0.7',
+          'Authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYXR0cmFuMTk5M0BnbWFpbC5jb20iLCJyb2xlIjoiMiIsImlhdCI6MTYzMzA0Njg3NiwiZXhwIjoxNjY0NjAzODI4fQ.GWu2OGDAtSfI7oXcP8GXmlroMdGCYYBzd72oNTZ02GKEF_VYVqBm6hJUeidBfWHHz34vLTy9PIcYm8UlRmjMdQ'
+        },
         playerOptions: {
           height: '360',
           autoplay: true,
@@ -52,7 +59,7 @@
           sources: [{
             type: "video/mp4",
             // mp4
-            src: "http://vjs.zencdn.net/v/oceans.mp4",
+            src: "https://apilivestream.cf/api/v1/videos/web/6695864314054a5e793b798c5e2555e88ec598cfc75e3ef934541f669513580a_1",
             // webm
             // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
           }],
